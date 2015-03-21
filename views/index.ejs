@@ -9,7 +9,11 @@
     <button ng-click="download()">Download</button></br>
     content:</br> <textarea ng-model="fileContent"></textarea></br>
     <input type="text" ng-model="newFileName"> <button ng-click="save()">Save</button></br>
-
+    <button ng-click="query()">List Files</button></br>
+    <!--<ul>
+      <li ng-repeat="fName in fileNames">{{fName}}</li>
+    </ul>-->
+    <p ng-repeat="fName in fileNames">{{fName}}</p>
     <!-- Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.min.js"></script>
