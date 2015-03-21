@@ -8,17 +8,27 @@ angular.module("app", [])
     };
 
     $scope.save = function(){
-    console.log("save " + $scope.fileName + $scope.description);
+      console.log("save " + $scope.newFileName);
 
-    // Simple POST request example (passing data) :
-    $http.post('/uploadFile', {name: $scope.fileName}).
-      success(function(data, status, headers, config) {
-        console.log(data);
-        $scope.fileContent = data;
-      }).
-      error(function(data, status, headers, config) {
-        console.log(status);
-      });
+      $http.post('/manageFile', {name: $scope.newFileName, content: $scope.fileContent }).
+        success(function(data, status, headers, config) {
+          console.log(data);
+        }).
+        error(function(data, status, headers, config) {
+          console.log(status);
+        });
+    };
+
+    $scope.download = function(){
+      console.log("downloading " + $scope.fileName);
+      $http.get('/manageFile/' + $scope.fileName).
+        success(function(data, status, headers, config) {
+          console.log(data);
+          $scope.fileContent = data;
+        }).
+        error(function(data, status, headers, config) {
+          console.log(status);
+        });
     };
 
   }]);

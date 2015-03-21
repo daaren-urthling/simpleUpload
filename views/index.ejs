@@ -5,10 +5,10 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body ng-controller="UploadController">
-    <input type="file" ng-model="aName" name="upload" multiple="multiple" onchange="angular.element(this).scope().fileChanged(this)">
-    <input type="text" ng-model="description">
-    <button ng-click="save()">Save</button></br>
-    content: <textarea ng-model="fileContent"></textarea></br>
+    <input type="file" onchange="angular.element(this).scope().fileChanged(this)">
+    <button ng-click="download()">Download</button></br>
+    content:</br> <textarea ng-model="fileContent"></textarea></br>
+    <input type="text" ng-model="newFileName"> <button ng-click="save()">Save</button></br>
 
     <!-- Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
