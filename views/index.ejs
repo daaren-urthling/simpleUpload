@@ -16,7 +16,8 @@
     <!--<ul>
       <li ng-repeat="fName in fileNames">{{fName}}</li>
     </ul>-->
-    <p ng-repeat="fName in fileNames">{{fName}}</p>
+    <p ng-repeat="fName in fileNames" ng-bind="fName"></p>
+    <!-- <p ng-repeat="fName in fileNames" >{{fName}}</p> -->
     <!-- Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.min.js"></script>
