@@ -2,7 +2,6 @@ angular.module("app", [])
   .controller('UploadController', ['$scope', '$http', function ($scope, $http) {
 
     $scope.fileName = "";
-    $scope.fileNames = [];
 
     $scope.fileChanged = function(element) {
       $scope.fileName = element.files[0].name;
@@ -18,6 +17,7 @@ angular.module("app", [])
           console.log(status);
         });
     };
+    $scope.fileNames =   $scope.query();
 
     $scope.save = function(){
       if (!$scope.newFileName || $scope.newFileName.lenght < 1) return;
